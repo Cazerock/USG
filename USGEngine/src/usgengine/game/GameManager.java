@@ -1,6 +1,7 @@
 package usgengine.game;
 
 import usgengine.graphics.Window;
+import usgengine.input.Keyboard;
 
 public class GameManager {
 
@@ -28,6 +29,9 @@ public class GameManager {
 	public void update() {
 		window.updateInput();
 		game.update(this);
+		
+		if (Keyboard.isPressed(Keyboard.KEY_ESCAPE))
+			shutdown();
 	}
 	
 	public void render() {
@@ -51,6 +55,7 @@ public class GameManager {
 		running = true;
 
 		while (true) {
+			
 			if (window.shouldClose() || !isRunning()) {
 				shutdown();
 				break;
@@ -72,6 +77,7 @@ public class GameManager {
 				fps = frames;
 				updates = 0;
 				frames = 0;
+				System.out.println("FPS " + fps + " Updates: " + ups);
 			}
 		}
 	}

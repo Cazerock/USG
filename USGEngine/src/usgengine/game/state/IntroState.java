@@ -67,8 +67,6 @@ public class IntroState implements State {
 
 	@Override
 	public void leave(GameManager gm, StateBasedGame game) {
-		texture.dispose();
-		shader.dispose();
 	}
 
 }

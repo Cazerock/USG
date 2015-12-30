@@ -1,8 +1,10 @@
 package usgengine.game;
 
+import usgengine.game.state.DebugState;
 import usgengine.game.state.IntroState;
 import usgengine.game.GameManager;
 import usgengine.game.state.StateBasedGame;
+import usgengine.input.Keyboard;
 
 public class Main extends StateBasedGame {
 	
@@ -20,6 +22,7 @@ public class Main extends StateBasedGame {
 	@Override
 	public void initStatesList() {
 		addState(new IntroState());
+		addState(new DebugState());
 	}
 
 }
